@@ -1,6 +1,6 @@
 # ansible-mac-dev
 
-A YAAP (yet another ansible playbook) for setting up a macbook for development work, loosely derived from the great [geerlingguy's work, both from his [mac dev playbook](https://github.com/geerlingguy/mac-dev-playbook) and his [ansible collection for mac](https://github.com/geerlingguy/ansible-collection-mac)
+A YAAP (yet another ansible playbook) for setting up a macbook for development work, loosely derived from the great geerlingguy's work, both from his [mac dev playbook](https://github.com/geerlingguy/mac-dev-playbook) and his [ansible collection for mac](https://github.com/geerlingguy/ansible-collection-mac)
 
 It might fit your needs, but definitely fits mine, so feel free to either use it as-is, derive your own work from it, or fork it and hack away with what you might require for your specific needs. I'm happy to take PRs for fixes when run on your machine or other potential tools that might be good to have but selfishly it's main purpose of this repository is for me, myself and I.
 
