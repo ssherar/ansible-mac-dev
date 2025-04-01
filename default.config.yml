@@ -1,5 +1,5 @@
 ---
-configure_vscode: false
+configure_vscode: true
 configure_git: true
 
 homebrew_installed_packages:

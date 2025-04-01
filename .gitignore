@@ -239,3 +239,8 @@ poetry.toml
 
 # LSP config files
 pyrightconfig.json
+
+### Repository specific gitignore ###
+
+# Config override
+config.yml
