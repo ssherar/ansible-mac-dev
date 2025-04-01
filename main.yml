@@ -16,6 +16,7 @@
     - role: geerlingguy.mac.homebrew
       tags: [homebrew]
     - role: geerlingguy.mac.dock
+      tags: [dock]
 
   tasks:
     - import_tasks: tasks/vs_code.yml
