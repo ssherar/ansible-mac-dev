@@ -1,0 +1,41 @@
+---
+- name: VSCode | Set settings.json filepath
+  ansible.builtin.set_fact:
+    vscode_settings_path: "~/Library/Application Support/Code/User/settings.json"
+  
+- name: VSCode | Install extensions
+  ansible.builtin.shell: "{{visual_studio_code_binpath}} --install-extension {{item}}"
+  loop: "{{ visual_studio_code_extensions}}"
+  register: command_result
+  changed_when: "'successfully installed' in command_result.stdout"
+
+- name: VSCode | Check settings.json exists 
+  ansible.builtin.stat:
+    path: "~/Library/Application Support/Code/User/settings.json"
+  register: vscode_settings_result
+
+- name: VSCode | Create settings.json file if it doesn't exist
+  ansible.builtin.copy:
+    dest: "{{ vscode_settings_path }}"
+    content: |
+      {}
+  when: not vscode_settings_result.stat.exists
+
+- name: VSCode | Load settings.json from filesystem
+  include_vars:
+    file: "{{ vscode_settings_path }}"
+    name: vscode_fs_settings
+
+- name: VSCode | load settings.json from ansible files
+  include_vars:
+    file: ./files/vs_code_settings.json
+    name: vscode_local_settings
+
+- name: VSCode | Merge JSON files
+  ansible.builtin.set_fact:
+    vscode_merged_settings: "{{ vscode_fs_settings | combine(vscode_local_settings, recursive=True) }}"
+
+- name: VSCode | Update settings.json
+  ansible.builtin.copy:
+    dest: "{{ vscode_settings_path }}"
+    content: "{{ vscode_merged_settings }}"

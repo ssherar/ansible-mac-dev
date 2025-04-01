@@ -1,0 +1,85 @@
+---
+configure_vscode: false
+configure_git: true
+
+homebrew_installed_packages:
+  - awscli
+  - fish
+  - jq
+  - git
+  - gh
+  - go
+  - gpg
+  - httpie
+  - nmap
+  - openssl
+  - starship
+  - hashicorp/tap/terraform
+  - hashicorp/tap/packer
+
+homebrew_taps:
+  - name: hashicorp/tap
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - 1password
+  - 1password-cli
+  - arc
+  - docker
+  - font-mononoki-nerd-font
+  - iterm2
+  - slack
+  - visual-studio-code
+  - hashicorp/tap/hashicorp-vagrant
+
+visual_studio_code_binpath: "'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'"
+visual_studio_code_extensions:
+  - 1password.op-vscode
+  - ms-python.python
+  - ms-azuretools.vscode-docker
+  - golang.go
+  - github.copilot
+
+git_config_username: "Sam Sherar"
+git_config_email: sbsherar@gmail.com
+
+dockitems_remove:
+ - Safari
+ - Launchpad
+ - Maps
+ - Photos
+ - FaceTime
+ - Messages
+ - Contacts
+ - Reminders
+ - Notes
+ - Freeform
+ - 'App Store'
+ - Podcasts
+ - TV
+ - Music
+ - 'System Settings'
+
+dockitems_persist:
+  - name: Arc
+    path: '/Applications/Arc.app'
+    pos: 1
+  - name: Visual Studio Code
+    path: '/Applications/Visual Studio Code.app/'
+    pos: 2
+  - name: iTerm2
+    path: '/Applications/iTerm.app/'
+    pos: 3
+  - name: Slack
+    path: '/Applications/Slack.app/'
+    pos: 4
+  - name: 1Password
+    path: '/Applications/1Password.app/'
+    pos: 5
+  - name: Mail
+    path: '/Applications/Mail.app/'
+    pos: 6
+  - name: Calendar
+    path: '/Application/Calendar.app/'
+    pos: 7
+
