@@ -24,3 +24,6 @@
     
     - import_tasks: tasks/git.yml
       when: configure_git
+    
+    - import_tasks: tasks/shell.yml
+      when: configure_shell

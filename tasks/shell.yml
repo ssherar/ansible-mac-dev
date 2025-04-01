@@ -1,0 +1,29 @@
+---
+- name: Shell | Find path for fish
+  shell:
+    cmd: which fish
+  register: fish_path
+  failed_when: "fish_path.rc != 0"
+  changed_when: false
+
+- name: Shell | change default shell to fish
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_facts.user_id }}"
+    shell: "{{ fish_path.stdout }}"
+
+- name: Shell | add fish config
+  ansible.builtin.copy:
+    src: files/shell/config.fish
+    dest: ~/.config/fish/config.fish
+    owner: "{{ ansible_facts.user_id }}"
+    group: "{{ ansible_facts.user_gid }}"
+    mode: 0644
+
+- name: Shell | Add starship config
+  ansible.builtin.copy:
+    src: files/shell/starship.toml
+    dest: ~/.config/starship.toml
+    owner: "{{ ansible_facts.user_id }}"
+    group: "{{ ansible_facts.user_gid }}"
+    mode: 0644

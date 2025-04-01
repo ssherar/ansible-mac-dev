@@ -1,6 +1,7 @@
 ---
 configure_vscode: true
 configure_git: true
+configure_shell: true
 
 homebrew_installed_packages:
   - awscli
