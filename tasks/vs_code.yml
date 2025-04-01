@@ -38,4 +38,4 @@
 - name: VSCode | Update settings.json
   ansible.builtin.copy:
     dest: "{{ vscode_settings_path }}"
-    content: "{{ vscode_merged_settings }}"
+    content: "{{ vscode_merged_settings | to_nice_json }}"
