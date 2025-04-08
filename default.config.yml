@@ -29,6 +29,7 @@ homebrew_cask_apps:
   - docker
   - font-mononoki-nerd-font
   - iterm2
+  - notion
   - slack
   - visual-studio-code
   - hashicorp/tap/hashicorp-vagrant
@@ -83,4 +84,5 @@ dockitems_persist:
   - name: Calendar
     path: '/Applications/Calendar.app/'
     pos: 7
-
+  - name: Notion
+    path: '/Applications/Notion.app/'
