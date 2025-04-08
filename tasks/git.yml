@@ -3,13 +3,13 @@
   ansible.builtin.git_config:
     name: user.name
     scope: global
-    value: "{{ git_config_username }}"
+    value: "{{ git_global_username }}"
 
 - name: Git | Set global email
   ansible.builtin.git_config:
     name: user.email
     scope: global
-    value: "{{ git_config_email }}"
+    value: "{{ git_global_email }}"
 
 - name: Git | Alias for commit
   ansible.builtin.git_config:
@@ -32,3 +32,26 @@
   loop:
     - github.com
     - gitlab.com
+  
+- name: "Git | Ensure the directory exists for repos"
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    owner: "{{ ansible_facts.user_id }}"
+    group: "{{ ansible_facts.user_gid }}"
+    state: directory
+  loop: "{{ git_sub_configs }}"
+
+- name: "Git | Create config stubs"
+  ansible.builtin.template:
+    src: files/git/.gitconfig.j2
+    dest: "{{item.path}}/.gitconfig-{{item.config_name}}"
+  loop: "{{ git_sub_configs }}"
+
+- name: "Git | Add the includeIf block in the .gitconfig for {{ item.path }}"
+  ansible.builtin.blockinfile:
+    path: ~/.gitconfig
+    block: |
+      {% for item in git_sub_configs %}
+      [includeIf "gitdir:{{item.path}}/"]
+        path = {{item.path}}/.gitconfig-{{item.config_name}}
+      {% endfor %}

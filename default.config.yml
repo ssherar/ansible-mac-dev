@@ -1,5 +1,5 @@
 ---
-configure_vscode: true
+configure_vscode: false
 configure_git: true
 configure_shell: true
 
@@ -42,8 +42,13 @@ visual_studio_code_extensions:
   - golang.go
   - github.copilot
 
-git_config_username: "Sam Sherar"
-git_config_email: sbsherar@gmail.com
+git_global_username: "Sam Sherar"
+git_global_email: sbsherar@gmail.com
+
+git_sub_configs:
+  - config_name: personal
+    path: ~/projects/personal
+    email: sbsherar@gmail.com
 
 dockitems_remove:
  - Safari
