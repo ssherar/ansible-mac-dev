@@ -61,6 +61,7 @@ dockitems_remove:
  - TV
  - Music
  - 'System Settings'
+ - 'iPhone Mirroring'
 
 dockitems_persist:
   - name: Arc
