@@ -81,6 +81,6 @@ dockitems_persist:
     path: '/Applications/Mail.app/'
     pos: 6
   - name: Calendar
-    path: '/Application/Calendar.app/'
+    path: '/Applications/Calendar.app/'
     pos: 7
 
