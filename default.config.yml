@@ -1,5 +1,5 @@
 ---
-configure_vscode: false
+configure_vscode: true
 configure_git: true
 configure_shell: true
 
@@ -7,6 +7,7 @@ homebrew_installed_packages:
   - awscli
   - fish
   - jq
+  - fswatch
   - git
   - gh
   - go
@@ -14,22 +15,32 @@ homebrew_installed_packages:
   - httpie
   - nmap
   - openssl
+  - opa
+  - podman
+  - podman-compose
+  - pyenv
   - starship
+  - watch
   - hashicorp/tap/terraform
   - hashicorp/tap/packer
+  - goreleaser/tap/goreleaser
 
 homebrew_taps:
   - name: hashicorp/tap
+  - name: goreleaser/tap
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - 1password-cli
   - arc
+  - chatgpt
   - docker
   - font-mononoki-nerd-font
   - iterm2
   - notion
+  - multipass
+  - postman
   - slack
   - visual-studio-code
   - hashicorp/tap/hashicorp-vagrant
