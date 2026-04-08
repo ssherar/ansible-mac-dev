@@ -55,7 +55,6 @@ homebrew_cask_apps:
   - 1password-cli
   - arc
   - chatgpt
-  - docker
   - font-mononoki-nerd-font
   - iterm2
   - notion
@@ -63,6 +62,7 @@ homebrew_cask_apps:
   - postman
   - slack
   - visual-studio-code
+  - goreleaser
   - hashicorp/tap/hashicorp-vagrant
 
 visual_studio_code_binpath: "'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'"
