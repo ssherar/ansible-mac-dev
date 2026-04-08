@@ -24,6 +24,26 @@ homebrew_installed_packages:
   - hashicorp/tap/terraform
   - hashicorp/tap/packer
   - goreleaser/tap/goreleaser
+  - act
+  - ansible-lint
+  - argocd
+  - aws-sso-cli
+  - copa
+  - ffmpeg
+  - graphviz
+  - helm
+  - htop
+  - jupyterlab
+  - k9s
+  - kubernetes-cli
+  - mkcert
+  - ollama
+  - prowler
+  - qemu
+  - renovate
+  - rtk
+  - the_silver_searcher
+  - trivy
 
 homebrew_taps:
   - name: hashicorp/tap
