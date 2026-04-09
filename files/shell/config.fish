@@ -4,8 +4,9 @@ if status is-interactive
 
   set -Ux PYENV_ROOT $HOME/.pyenv
   set -U fish_user_paths $PYENV_ROOT/bin
-  pyenv init - fish | source
 
   /opt/homebrew/bin/brew shellenv | source
   starship init fish | source
+  pyenv init - fish | source
+  direnv hook fish | source
 end

@@ -22,7 +22,9 @@ $rust\
 $scala\
 [](fg:#86BBD8 bg:#06969A)\
 $docker_context\
-[](fg:#06969A)\
+[](fg:#06969A bg:#336699)\
+$aws\
+[](fg:#336699)\
 """
 
 # Disable the blank line at the start of the prompt
@@ -135,3 +137,6 @@ symbol = " "
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
 
+[aws]
+style = "bg:#336699"
+format = '[ $symbol ($profile) ]($style)'
